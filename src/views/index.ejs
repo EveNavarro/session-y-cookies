@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+  <%- include("partials/head") %>
+
+<body style="background: <%- color ? color : "radial-gradient(circle, rgba(130,168,255,1) 3%, rgba(130,93,209,1) 100%, rgba(171,159,229,1) 100%);"%>">
+
+    <% if (session.user && user) { %>
+      <div class="form-container">
+        <span style='font-size:85px; text-align: center;'>&#128512;</span>
+        <h1>¡HOLA <%= user.name %>!</h1>
+  
+        <div class="user-info">
+          <p>Elegiste el color: </p><span><%= user.colors %></span>
+          <p>tu email es: </p><span><%= user.email %></span>
+          <p>y tu edad es: </p><span><%= user.age %> años.</span>
+        </div>
+        <a href="/hey">Hey!</a>
+        <form action="/delete" method="post" class="remove-color"><button type="submit">Borrar Color</button></form>
+      </div>
+
+    <% } else { %>
+
+      <form action="/form" method="POST" class="form-container">
+        <h1>¡HOLA USUARIO!</h1>
+
+        <div class="input-form">
+          <label for="user">Ingrese su nombre <span>*</span></label>
+          <input type="text" name="name">
+          <% if(locals.errors && errors.name) { %>
+            <small class="text-danger"><%= errors.name.msg %> </small>
+          <% } %> 
+        </div>
+  
+        <div class="input-form">
+          <label for="email">Ingrese un email <span>*</span></label>
+          <input type="email" name="email">
+          <% if(locals.errors && errors.email) { %>
+              <small class="text-danger"><%= errors.email.msg %> </small>
+          <% } %> 
+        </div>
+  
+        <div class="input-form">
+          <label for="age">Ingrese su edad</label>
+          <input type="text" name="age">
+          <% if(locals.errors && errors.age) { %>
+              <small class="text-danger"><%= errors.age.msg %> </small>
+          <% } %> 
+        </div>
+  
+        <div class="input-form">
+          <label for="age">Elige un color <span>*</span></label>
+          <select name="colors" id="colors">
+            <option selected value="" hidden>Elegir</option>
+            <option value="pink">Rosa</option>
+            <option value="palegreen">Verde</option>
+            <option value="dodgerblue">Azul</option>
+            <option value="mediumpurple">Violeta</option>
+          </select>
+            <% if(locals.errors && errors.colors) { %>
+              <small class="text-danger"><%= errors.colors.msg %> </small>
+            <% } %> 
+        </div>
+  
+        <div class="input-form-check">
+          <input type="checkbox" name="remember"><label for="remember">Recordar color</label>
+        </div>
+  
+        <div class="submit-button">
+          <button type="submit">Enviar</button>
+        </div>
+  
+      </form>
+
+    <% } %>
+    
+  </body>
+</html>

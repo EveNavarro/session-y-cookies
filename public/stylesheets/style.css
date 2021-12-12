@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,700;1,300;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Poppins', sans-serif
+}
+
+.body-color {
+    background: radial-gradient(circle, rgba(185,136,186,1) 29%, rgba(171,159,229,1) 100%, rgba(148,187,233,1) 100%);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.form-container a {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem;
+}
+
+.form-container .remove-color {
+    margin: 0 auto;
+}
+
+.form-container .remove-color button {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.form-container h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 1rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 1px 1px 8px rgb(99, 99, 99);
+}
+.thanks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.thanks h1 {
+    color: white;
+    text-shadow: 1px 1px 8px rgb(99, 99, 99);
+}
+.thanks a {
+    color: black;
+    font-weight: bold;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.user-info P {
+  font-weight: bold;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.input-form label {
+    font-weight: 400;
+    text-shadow: 1px 1px 8px rgb(90, 90, 90);
+}
+
+.input-form label span {
+    color: #9b1402;
+    font-weight: bold;
+}
+
+.input-form input,
+.input-form select {
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+}
+
+.input-form input:focus,
+.input-form select:focus {
+    outline: none;
+    box-shadow: 0 0 10px white;
+}
+
+.input-form-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-form-check input {
+    margin-right: 0.7rem;
+}
+
+.submit-button {
+    margin: 1rem auto;
+}
+
+.submit-button button {
+    width: 200px;
+    padding: 0.5rem;
+    background-color: #9c8de7;
+    color: white;
+    font-weight: bold;
+}
+
+.text-danger {
+    color: #9b1402;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px){
+    .form-container {
+        width: 70%;
+    }
+
+    .input-form {
+        width: 80%;
+        margin: 1rem auto;
+    }
+
+    .user-info {
+      font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .form-container {
+        width: 40%;
+    }
+}
+
